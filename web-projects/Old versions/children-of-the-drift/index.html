@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!-- contains pretty much all characters, use this! -->
+    <meta name="author" content="Karl Schmitz">
+    <meta name="description" content="blablabla"> <!-- basic description, also good for keywords for SEO-->
+    <!--<meta name="keywords" content="fill, in, your, keywords, here">  keyword meta no longer used, because of abuse -->
+    <!--lots more meta data types, for example for Twitter, Facebook, etc so it can show up with picture and description and stuff-->
+    <link rel="icon" href="images/ark.jpg" type="image/x-icon"> <!--adds favicon icon to be shown in tabs and stuff, can also use png or jpg, but ico is backwards compatible, LOTS of different requirements for all the various browsers and OS-->
+    <title>Children of the Drift</title> <!--title-->
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+    <script src="scripts/main.js" defer></script> <!-- defer makes it so that it waits until HTML is fully loaded before script begins working-->
+  </head>
+
+  <body>
+    <h1>The Drift</h1> <!-- preferably only one h1 per page, no more than 3 levels per page unless absolutely needed-->
+    <span style="font-size: 32px; margin: 21px 0; display: block;">Is this a top level heading? No</span> <!-- span to create something that LOOKS like a heading, without all the implications-->
+    <img src="images/sanctuary2.png" title= "Drawing" alt="Shitty drawing of the floe Sanctuary: a floating island with single mountain, small town and port." class="center"> <!--title attributes adds hover over image (or text or whatever) info-->
+    <p>Alone. The first thought of existence in the darkness of the <strong>Void</strong>. Mother was alone. So out of her own essence, she created others; her first children.</p>
+    <p>Tea&gt;Coffee</p> <!-- &gt; is a standin for > (so it isn't misunderstood as code)-->
+    <h2>The Heavenly Family</h2>
+    <ol>
+        <li><a href="https://en.wikipedia.org/wiki/Mother!" target="_blank">Mother</a></li> <!--target="-blank" makes the link open in new tab! -> overrides normal behaviour-->
+        <li><em>Father</em></li>
+        <li>Children</li> <!-- nesting lists inside of lists is no problem-->
+            <ul>
+                <li>First</li>
+                <li>Second</li>
+                <li>etc.</li>
+            </ul>
+    </ol>
+    <p>&quot;my cat is very grumpy&quot;</p> <!-- &quot; is " without code implication-->
+    
+    <!-- disabled attribute: <input type="text" disabled="disabled"> , can be done as shorthand as simply disabled-->
+    <input type="text" disabled> <!-- using the disabled attribute prevents the end user from entering text into the input box -->
+    <input type="text"> <!-- text input is allowed, as it doesn't contain the disabled attribute -->
+    <br> <!--line break-->
+
+    <button>Change user</button>
+    <!--<script src="scripts/main.js"></script> put at the end to ensure HTML has loaded, but really better to be put in head (with defer)-->
+  </body>
+</html>

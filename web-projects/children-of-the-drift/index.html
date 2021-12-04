@@ -1,0 +1,115 @@
+<!-- index.html is generally the frontpage of a website, with links and stuff to the rest-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> <!-- contains pretty much all characters, use this! -->
+    <meta name="author" content="Karl Schmitz">
+    <meta name="description" content="blablabla"> <!-- basic description, also good for keywords for SEO-->
+    <!--<meta name="keywords" content="fill, in, your, keywords, here">  keyword meta no longer used, because of abuse -->
+    <!--lots more meta data types, for example for Twitter, Facebook, etc so it can show up with picture and description and stuff-->
+    <link rel="icon" href="images/ark.jpg" type="image/x-icon"> <!--adds favicon icon to be shown in tabs and stuff, can also use png or jpg, but ico is backwards compatible, LOTS of different requirements for all the various browsers and OS-->
+    <title>Children of the Drift</title> <!--title-->
+    <link href="styles/style.css" rel="stylesheet"> <!-- styles/... styles folder is in same root as index.html, if in a higher one, use ../../../complex/path/to/my/file.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+    <script src="scripts/main.js" defer></script> <!-- defer makes it so that it waits until HTML is fully loaded before script begins working-->
+  </head>
+
+
+
+  <!-- relative and absolute URLs (using <a>) -> pretty selfexplanatory, but important to keep in mind-->
+
+  <body>
+
+
+
+    <!-- basic parts of the body: 
+    - header with logo and such, stays same on all pages (not to be confused with heading)
+    - navigation bar, same as header
+    - main, just the general content (unique) of the page, shouldn't be nested inside others
+        - can include: article, sections, div, span (try to start each with a heading <h2> or such)
+            div = block-level non-semantic element (doesn't tell the browser anything about it, just a way to bundle stuff)
+            span = inline equivalent 
+            try not to overuse them and if you do, add a class to it to make it targetable with CSS/JS
+    - sidebar, some peripheral stuff like notes or further links (or ads?)
+    - footer, copyright, fineprint, contact info, sometimes links elsewhere
+     -->
+
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="image-compendium.html"> Image Compendium</a></li> <!-- link to other page on same site (found in other html file)-->
+            <li><a href="debug-test.html"> Debug Test</a></li>
+            <li><a href="#Heavenly_Family">Heavenly Family</a></li> <!-- link to other place on same page -> Heavenly_Family was set as id at the target further below-->
+        </ul>
+
+        <form>
+            <input type="search" name="q" placeholder="Search query">
+            <input type="submit" value="Go!">
+          </form>
+
+    </nav>
+
+    <main>
+
+    <h1>The Drift</h1> <!-- preferably only one h1 per page, no more than 3 levels per page unless absolutely needed-->
+    <h2>The most prominent religion on the Drift is the teachings of the <a href="#Heavenly_Family">Heavenly Family</a></h2> <!-- notice the # !-->
+    <span style="font-size: 32px; margin: 21px 0; display: block;">Is this a top level heading? No</span> <!-- span to create something that LOOKS like a heading, without all the implications-->
+    <figure> <!-- a nice way to nest an image together with its caption-->
+        <img src="images/sanctuary2.png" alt="Shitty drawing of the floe Sanctuary: a floating island with single mountain, small town and port." 
+             class="center" width="624" height="419"> <!--title attributes adds hover over image (or text or whatever) info, DON'T USE TITLE ON IMAGES!-->
+            
+        <figcaption>The town and floe known as Sanctuary. As its name implies, it is a safe haven for all people on the Drift.<a href="images/sanctuary2.png"> Download Picture (134 KB)</a></figcaption>
+    </figure>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d883.4667148726375!2d13.397131720305165!3d52.52105042164832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851fbb8fa762f%3A0xe7ed78842246c6d6!2sDie%20Bogenspannerin!5e0!3m2!1sde!2sde!4v1638401737740!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!--embedding stuff with iframe is child's play, also works for youtube and other stuff. the code above was given just like that from googlemaps-->
+
+    <p>Alone. The first thought of existence in the darkness of the <strong>Void</strong>. Mother was alone. So out of her own essence, she created others; her first children.</p>
+    <p>Tea&gt;Coffee</p> <!-- &gt; is a standin for > (so it isn't misunderstood as code)-->
+    <h2 id="Heavenly_Family">The Heavenly Family</h2> <!-- id="..." creates a sort of anchor to later link to (can even be inside of other html documents, then include the path)-->
+    <ol>
+        <li><a href="https://en.wikipedia.org/wiki/Mother!" target="_blank">Mother</a></li> <!--target="-blank" makes the link open in new tab! -> overrides normal behaviour-->
+        <li><em>Father</em></li>
+        <li>Children <!-- nesting lists inside of lists is no problem-->
+            <ul>
+                <li><abbr title="Father's First Born">First</abbr></li> <!-- abbreviation to give more information on mouse hover (use sparingly, as mobile and disabled users might not be able to use it)-->
+                <li>Second</li>
+                <li>etc.</li>
+            </ul>
+        </li>
+    </ol>
+    <dl> <!-- description lists for definitions and stuff, can include multiple description definitions (dd) for one description term (dt)-->
+        <dt>soliloquy</dt>
+        <dd>In drama, where a character speaks to themselves, representing their inner thoughts or feelings and in the process relaying them to the audience (but not to other characters.)</dd>
+        <dt>aside</dt>
+        <dd>In drama, where a character shares a comment only with the audience for humorous or dramatic effect. This is usually a feeling, thought, or piece of additional background information.</dd>
+        <dd>In writing, a section of content that is related to the current topic, but doesn't fit directly into the main flow of content so is presented nearby (often in a box off to the side.)</dd>
+      </dl>      
+    <p>&quot;my cat is very grumpy&quot;</p> <!-- &quot; is " without code implication-->
+    
+    <!-- disabled attribute: <input type="text" disabled="disabled"> , can be done as shorthand as simply disabled-->
+    <input type="text" disabled> <!-- using the disabled attribute prevents the end user from entering text into the input box -->
+    <input type="text"> <!-- text input is allowed, as it doesn't contain the disabled attribute -->
+    <br> <!--line break-->
+    
+
+    </main>
+
+    <footer>
+    <button>Change user</button>
+    <!--<script src="scripts/main.js"></script> put at the end to ensure HTML has loaded, but really better to be put in head (with defer)-->
+
+    <address><p>
+          smitzkar Dec.1<sup>st</sup> 2021 <br><!-- could also include a link or more detailed information or layout-->
+          <time datetime="2016-01-20">20 January 2016</time>
+        </p> 
+    </address>
+    </footer>
+      
+
+  </body>
+</html>
